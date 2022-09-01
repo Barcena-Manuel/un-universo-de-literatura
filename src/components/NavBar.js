@@ -1,6 +1,8 @@
+import { MenuItem } from '@mui/material';
 import '../App.css'
+import CartWidget from './CartWidget'
 
-export const NavBar = () => {
+const NavBar = () => {
     return (
     <header>
         <nav className="navbar navbar-expand-lg header">
@@ -27,6 +29,7 @@ export const NavBar = () => {
                     </ul>
                     </li>
                 </ul>
+                <MenuItem><CartWidget /></MenuItem>
                 <form className="d-flex" role="search">
                     <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"></input> 
                     <button className="btn btn-outline-success" type="submit">Buscar</button>
