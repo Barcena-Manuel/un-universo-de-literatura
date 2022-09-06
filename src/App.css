@@ -12,4 +12,9 @@ body {
 
 .header {
   background-color: cyan !important;
+  border-bottom: #d8dee6 2px solid;
+}
+
+.cards {
+  width: 18rem;
 }
