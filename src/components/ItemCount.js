@@ -1,23 +1,31 @@
 import { useState } from 'react';
 
 const ItemCount = () => {
-    
+
     const [rate, setRate] = useState(1);
 
     const cliclksMas = () => {
-        setRate (rate +1);
+        if(rate < 5){
+            setRate (rate +1);
+        }else{
+            console.log("no hay stock");
+        }
     }
 
     const cliclksMenos = () => {
-        setRate (rate -1);
+        if(rate > 1){
+            setRate (rate -1);
+        }else{
+            console.log("no se puede");
+        }
     }
 
     return (
         <>
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary" onClick={cliclksMas}>+</button> {rate}
-            <button type="button" class="btn btn-primary">1</button>
-            <button type="button" class="btn btn-primary" onClick={cliclksMenos}>-</button> {rate}
+        <div className="btn-group" role="group" aria-label="Basic example">
+            <button type="button" className="btn btn-primary" onClick={cliclksMas}>+</button>
+            <button type="button" className="btn btn-primary">{rate}</button>
+            <button type="button" className="btn btn-primary" onClick={cliclksMenos}>-</button>
         </div>
         </>
     )

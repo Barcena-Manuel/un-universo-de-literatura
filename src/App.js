@@ -1,12 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
+import './App.css'
 import  NavBar from "./components/NavBar.js";
-import Cards from './components/Cards.js'
+import ItemList from "./components/ItemList.js";
 
 const App = () => {
   return (
     <div>
     <NavBar />
-      <Cards />
+      <ItemList />
     </div>
   );
 }

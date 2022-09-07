@@ -1,6 +1,7 @@
 import ItemCount from './ItemCount'
 
-const Card = (props) => {
+// estructura de cartas
+const Item = (props) => {
     return (
         <>
         <section>
@@ -18,4 +19,4 @@ const Card = (props) => {
     )
 }
 
-export default Card;
+export default Item;
