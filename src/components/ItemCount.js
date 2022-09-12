@@ -22,7 +22,7 @@ const ItemCount = () => {
 
     return (
         <>
-        <div className="btn-group" role="group" aria-label="Basic example">
+        <div className="btn-group contador" role="group" aria-label="Basic example">
             <button type="button" className="btn btn-primary" onClick={cliclksMas}>+</button>
             <button type="button" className="btn btn-primary">{rate}</button>
             <button type="button" className="btn btn-primary" onClick={cliclksMenos}>-</button>

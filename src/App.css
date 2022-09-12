@@ -18,3 +18,7 @@ body {
 .cards {
   width: 18rem;
 }
+
+.contador {
+  margin:10px !important;
+}
