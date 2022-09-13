@@ -15,8 +15,16 @@ body {
   border-bottom: #d8dee6 2px solid;
 }
 
+.card__aling{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
 .cards {
-  width: 18rem;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
 }
 
 .contador {
