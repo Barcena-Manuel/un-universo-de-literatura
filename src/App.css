@@ -24,9 +24,35 @@ body {
 .cards {
   width: 300px;
   padding: 10px;
-  margin: auto;
+  margin: 10px;
 }
 
 .contador {
   margin:10px !important;
 }
+
+.info {
+  display: flex;
+  flex-direction: row;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+
+.img {
+  width: 500px;
+  height: 800px;
+  margin: 70px;
+  margin-left: 200px;
+}
+
+.sinopsis {
+  padding: 50px;
+  margin-top: 250px;
+}
+
+.titulo {
+  padding: 50px;
+  padding-left: 0;
+}
+
+

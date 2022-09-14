@@ -14,7 +14,6 @@ const Item = ({producto}) => {
                     <p className="card-text">{descripcion}</p>
                     <ItemCount initial={1} stock={5} />
                     <button type="button" class="btn btn-outline-info">Info</button>
-                    
                 </div>
             </div>
         </>
