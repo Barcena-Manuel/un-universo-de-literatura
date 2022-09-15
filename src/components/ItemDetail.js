@@ -6,7 +6,7 @@ const ItemDetail = ({productos}) => {
     return (
         <section>
             {
-                    <div className="info">
+                    <div className="info letras">
                         <img src={productos.img} alt="..." className="img"></img>
                         <div className="sinopsis">
                             <h2 className="titulo">{productos.titulo}</h2>

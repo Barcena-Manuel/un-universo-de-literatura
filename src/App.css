@@ -12,7 +12,7 @@ body {
 }
 
 .header {
-  background-color: rgb(114, 6, 82) !important;
+  background-color: #42032fea !important;
   border-bottom: #000000 2px solid;
   color: white !important;
 }
@@ -27,7 +27,7 @@ body {
   width: 300px;
   padding: 10px;
   margin: 10px;
-  background-color: #523c15e8;
+  background-color: #720652e3;
   color: white;
 }
 
