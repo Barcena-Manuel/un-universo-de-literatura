@@ -8,8 +8,8 @@ const ItemDetailContainer = () => {
     const [item, setData] = useState ({})
     // promesa para las cartas
     useEffect(() => {
-        customFetch (2000, dataFromBD[1])
-            .then(datos => setData(dataFromBD))
+        customFetch (2000, dataFromBD[4])
+            .then(datos => setData(datos))
             .catch(err => console.log(err))
     }, []);
 

@@ -8,11 +8,13 @@ body {
   margin: 0;
   background-color: white;
   font-family: "Segoe UI";
+  background-image: url(./img/fondo.jpg);
 }
 
 .header {
-  background-color: cyan !important;
-  border-bottom: #d8dee6 2px solid;
+  background-color: rgb(114, 6, 82) !important;
+  border-bottom: #000000 2px solid;
+  color: white !important;
 }
 
 .card__aling{
@@ -25,6 +27,8 @@ body {
   width: 300px;
   padding: 10px;
   margin: 10px;
+  background-color: #523c15e8;
+  color: white;
 }
 
 .contador {
@@ -53,6 +57,10 @@ body {
 .titulo {
   padding: 50px;
   padding-left: 0;
+}
+
+.letras {
+  color: white !important;
 }
 
 
