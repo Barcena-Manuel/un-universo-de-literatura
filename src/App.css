@@ -8,13 +8,22 @@ body {
   margin: 0;
   background-color: white;
   font-family: "Segoe UI";
-  background-image: url(./img/fondo.jpg);
+  background-image: url(./img/papel.jpg);
 }
 
 .header {
-  background-color: #42032fea !important;
-  border-bottom: #000000 2px solid;
-  color: white !important;
+  background-color: white !important;
+  border-bottom: #0000001a 2px solid;
+  color: #42032fea !important;
+}
+
+.img__logo {
+  width: 30px;
+  height: 30px;
+}
+
+.letras-header {
+  color: black !important;
 }
 
 .card__aling{
@@ -27,12 +36,18 @@ body {
   width: 300px;
   padding: 10px;
   margin: 10px;
-  background-color: #720652e3;
+  background-color: #5f4b59e3;
   color: white;
 }
 
 .contador {
   margin:10px !important;
+}
+
+.boton {
+  background-color: white !important;
+  color: black !important;
+  border-color: white !important;
 }
 
 .info {

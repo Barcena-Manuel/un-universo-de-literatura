@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../App.css'
 
 const ItemCount = ({stock, initial}) => {
 
@@ -27,10 +28,10 @@ const ItemCount = ({stock, initial}) => {
     return (
         <>
         <div className="btn-group contador" role="group" aria-label="Basic example">
-            <button type="button" className="btn btn-primary" onClick={cliclksMas}>+</button>
-            <button type="button" className="btn btn-primary">{rate}</button>
-            <button type="button" className="btn btn-primary" onClick={cliclksMenos}>-</button>
-            <button id="carrito" className="btn btn-primary" onClick={() => onAdd(rate)}>Añadir al Carrito</button>
+            <button type="button" className="btn btn-primary boton" onClick={cliclksMas}>+</button>
+            <button type="button" className="btn btn-primary boton">{rate}</button>
+            <button type="button" className="btn btn-primary boton" onClick={cliclksMenos}>-</button>
+            <button id="carrito" className="btn btn-primary boton" onClick={() => onAdd(rate)}>Añadir al Carrito</button>
         </div>
         </>
     )

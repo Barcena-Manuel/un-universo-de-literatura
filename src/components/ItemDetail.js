@@ -15,6 +15,7 @@ const ItemDetail = ({productos}) => {
                             <h6>Sinopsis:</h6>
                             <p>{productos.sinopsis}</p>
                             <h5>Precio: {productos.precio}</h5>
+                            <h6>Stock del producto: {productos.stock}</h6>
                             <ItemCount initial={1} stock={5} />
                         </div>
                     </div>

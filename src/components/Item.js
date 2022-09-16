@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import '../App.css'
 import ItemCount from './ItemCount'
 
 // estructura de cartas
 const Item = ({producto}) => {
-    const {titulo, img, descripcion} = producto;
+    const {id, titulo, img, descripcion, stock} = producto;
 
     return (
         <>
@@ -12,8 +13,8 @@ const Item = ({producto}) => {
                 <div className="card-body">
                     <h5 className="card-title">{titulo}</h5>
                     <p className="card-text">{descripcion}</p>
-                    <ItemCount initial={1} stock={5} />
-                    <button type="button" class="btn btn-outline-info">Info</button>
+                    <ItemCount initial={1} stock={stock} />
+                    <Link to={`/item/${id}`}><button type="button" class="btn btn-outline-info">Detalles</button></Link>
                 </div>
             </div>
         </>
