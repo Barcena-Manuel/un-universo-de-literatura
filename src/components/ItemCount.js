@@ -1,28 +1,24 @@
-import { useState } from 'react';
-import '../App.css'
+import { useState, useEffect} from 'react';
+import '../App.css';
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock = 0, initial = 0, onAdd}) => {
 
-    const [rate, setRate] = useState(1);
+    const [rate, setCount] = useState(0);
+
+    useEffect(() => {
+        setCount(initial);
+    }, [])
 
     const cliclksMas = () => {
         if(rate < stock){
-            setRate (rate +1);
-        }else{
-            console.log("no hay stock");
+            setCount (rate +1);
         }
     }
 
     const cliclksMenos = () => {
-        if(rate > initial){
-            setRate (rate -1);
-        }else{
-            console.log("no se puede");
+        if(rate >= initial){
+            setCount (rate -1);
         }
-    }
-
-    const onAdd = (rate) => {
-        alert ("Añadiste"  + rate +  "al carrito")
     }
 
     return (
@@ -31,7 +27,12 @@ const ItemCount = ({stock, initial}) => {
             <button type="button" className="btn btn-primary boton" onClick={cliclksMas}>+</button>
             <button type="button" className="btn btn-primary boton">{rate}</button>
             <button type="button" className="btn btn-primary boton" onClick={cliclksMenos}>-</button>
-            <button id="carrito" className="btn btn-primary boton" onClick={() => onAdd(rate)}>Añadir al Carrito</button>
+            
+            {
+                stock && rate 
+                ?<button id="carrito" variant="carrito" className="btn btn-primary boton" onClick={() => onAdd(rate)}>Añadir al Carrito</button>
+                :<button id="carrito" variant="carrito" className="btn btn-primary boton" disabled>Añadir al Carrito</button>
+            }
         </div>
         </>
     )

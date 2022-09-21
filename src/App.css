@@ -7,14 +7,14 @@
 body {
   margin: 0;
   background-color: white;
-  font-family: "Segoe UI";
+  font-family: "Roboto";
   background-image: url(./img/papel.jpg);
 }
 
 .header {
   background-color: white !important;
   border-bottom: #0000001a 2px solid;
-  color: #42032fea !important;
+  color: black !important;
 }
 
 .img__logo {
@@ -22,7 +22,8 @@ body {
   height: 30px;
 }
 
-.letras-header {
+.letras__header {
+  font-size: "Roboto";
   color: black !important;
 }
 

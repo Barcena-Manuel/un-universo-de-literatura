@@ -12,15 +12,9 @@ const ItemDetailContainer = () => {
 
     // promesa para las cartas
     useEffect(() => {
-        if(id) {
-            customFetch (2000, dataFromBD.filter[item => item.id === id])
+            customFetch (2000, dataFromBD.find(item => item.id === id))
             .then(datos => setData(datos))
             .catch(err => console.log(err))
-        }else{
-            customFetch (2000, dataFromBD)
-            .then(datos => setData(datos))
-            .catch(err => console.log(err))
-        }
     }, [id]);
 
     return(
