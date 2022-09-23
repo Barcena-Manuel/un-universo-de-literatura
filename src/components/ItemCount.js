@@ -1,13 +1,9 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import '../App.css';
 
-const ItemCount = ({stock = 0, initial = 0, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
     const [rate, setCount] = useState(0);
-
-    useEffect(() => {
-        setCount(initial);
-    }, [])
 
     const cliclksMas = () => {
         if(rate < stock){

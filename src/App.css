@@ -41,6 +41,11 @@ body {
   color: white;
 }
 
+.imagen__card {
+  width: 280px;
+  height: 450px;
+}
+
 .contador {
   margin:10px !important;
 }

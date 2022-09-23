@@ -8,7 +8,7 @@ const NavBar = () => {
     <header>
         <nav className="navbar navbar-expand-lg header">
             <div className="container-fluid">
-            <Link to="/" className="navbar-brand letras__header" href="#"><img className="img__logo" src="https://st.depositphotos.com/3258967/4342/v/600/depositphotos_43424921-stock-illustration-man-reading-a-book.jpg" alt="..."></img>Universo de literatura</Link>
+            <Link to="/" className="navbar-brand letras__header" href="#"><img className="img__logo" src="https://st.depositphotos.com/3258967/4342/v/600/depositphotos_43424921-stock-illustration-man-reading-a-book.jpg" alt="..."></img>Universo de Literatura</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
