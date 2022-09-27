@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial= 0, onAdd}) => {
 
     const [rate, setCount] = useState(0);
 
@@ -12,7 +12,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const cliclksMenos = () => {
-        if(rate >= initial){
+        if(rate > initial){
             setCount (rate -1);
         }
     }

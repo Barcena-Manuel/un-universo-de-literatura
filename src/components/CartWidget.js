@@ -5,9 +5,9 @@ import { CartContext } from './CartContext'
 
 // icono de carrito
 const CartWidget = () => {
-    const { calcItemquantity } = useContext(CartContext);
+    const {calcItemquantity} = useContext(CartContext);
     return (
-        <Badge badgeContent={calcItemquantity} color="secondary">
+        <Badge badgeContent={calcItemquantity()} color="secondary">
             <ShoppingCartOutlined />
         </Badge>
     );

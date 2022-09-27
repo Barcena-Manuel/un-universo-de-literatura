@@ -17,6 +17,15 @@ body {
   color: black !important;
 }
 
+.carrito { 
+  text-decoration: none;
+  color: black;
+}
+
+.carrito:hover {
+  color: black;
+}
+
 .img__logo {
   width: 30px;
   height: 30px;
@@ -90,6 +99,9 @@ body {
   padding: 15px;
   padding-left: 60px;
   margin: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .lista__div {
@@ -99,16 +111,55 @@ body {
 }
 
 .lista__titulo {
+  text-align: center;
   padding: 30px;
   margin: 0;
 }
 
+.lista__botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 45x;
+  align-items: center;
+}
+
 .lista__eliminar {
-  position: relative;
-  left: 75%;
   width: 200px;
   height: 50px;
   margin: 25px;
+}
+
+.lista__botonInt {
+  margin: 50px;
+  width: 200px;
+  height: 50px;
+}
+
+.lista__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carta__cuerpo {
+  width: 400px;
+  height: 350px;
+  margin: 50px;
+  margin-left: 40%;
+  margin-right: 45%;
+  align-items: center;
+}
+
+.carta__letras {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.carta__titulos {
+  padding: 10px;
 }
 
 .lista__img {
@@ -130,10 +181,7 @@ body {
   width: 200px;
   height: 50px;
   margin: 70px;
-}
-
-.espacio {
-  width: 500px;
+  margin-top: 90px;
 }
 
 

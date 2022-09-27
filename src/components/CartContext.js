@@ -7,26 +7,26 @@ const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])
 
-    const addItem = (item, quantity) => {
+    const addItem = (item, cantidad) => {
         let found = cartList.find(productos => productos.idItem === item.id)
         if (found === undefined) {
             setCartList([
             ...cartList,
             {
                 idItem: item.id,
-                imgItem: item.img[0],
+                imgItem: item.img,
                 tituloItem: item.titulo,
                 precioItem: item.precio,
-                quantityItem: quantity
+                cantidadItem: cantidad
             }
         ]);
         }else {
-            found.quantityItem += quantity;
+            found.cantidadItem += cantidad;
         }
     }
 
     const removeItem = (id) => {
-        let result = cartList.filter(item => item.idItem != id);
+        let result = cartList.filter(item => item.idItem !== id);
         setCartList(result);
     }
 
@@ -36,12 +36,12 @@ const CartContextProvider = ({children}) => {
 
     const calcTotalPorItem = (idItem) => {
         let index = cartList.map(item => item.idItem).indexOf(idItem);
-        return cartList[index].costItem * cartList[index].quantityItem;
+        return cartList[index].costItem * cartList[index].cantidadItem;
     }
 
     const calcSubTotal = () => {
         let totalPorItem = cartList.map(item => calcTotalPorItem(item.idItem));
-        return totalPorItem.reduce((previoValor, currentValor) => previoValor + currentValor);
+        return totalPorItem.reduce((previoValor, proximoValor) => previoValor + proximoValor);
     }
 
     const calcImpuestos = () => calcSubTotal() * 0.21;
@@ -51,8 +51,8 @@ const CartContextProvider = ({children}) => {
     }
 
     const calcItemquantity = () => {
-        let quantitys = cartList.map(item => item.quantityItem);
-        return quantitys.reduce(((previoValor, currentValor) => previoValor + currentValor), 0);
+        let cantidades = cartList.map(item => item.cantidadItem);
+        return cantidades.reduce(((previoValor, proximoValor) => previoValor + proximoValor), 0);
     }
 
     return(

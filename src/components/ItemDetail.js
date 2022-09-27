@@ -6,7 +6,7 @@ import { CartContext } from './CartContext';
 import { useContext } from 'react';
 
 const ItemDetail = ({productos}) => {
-    const {img, titulo, autor, genero, sinopsis, precio, stock} = productos;
+    const {img, titulo, autor, genero, sinopsis, precio, stock, initial} = productos;
 
     const [count, setItemCount] = useState (0);
 
@@ -32,7 +32,7 @@ const ItemDetail = ({productos}) => {
                             <h6>Stock del producto: {stock}</h6>
                             {
                                 count === 0
-                                ? <ItemCount stock={stock} onAdd={onAdd}/>
+                                ? <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
                                 : <Link to="/cart"><button variant="carrito" type="button" class="btn btn-warning">Ir al carrito</button></Link>
                             }
                         </div>
