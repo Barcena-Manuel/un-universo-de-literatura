@@ -24,7 +24,7 @@ const NavBar = () => {
                     <Link to="/category/3" className="nav-link letras__header" href="#">Juveniles</Link>
                     </li>
                 </ul>
-                <MenuItem><CartWidget /></MenuItem>
+                <Link to="/cart"><MenuItem><CartWidget /></MenuItem></Link>
                 <form className="d-flex" role="search">
                     <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"></input> 
                     <button className="btn btn-outline-success" type="submit">Buscar</button>
