@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { doc, getDoc } from "firebase/firestore";
 import '../App.css'
-import customFetch from '../utils/CustomFetch'
 import ItemDetail from './ItemDetail'
-import dataFromBD from '../utils/Data'
 
 
 const ItemDetailContainer = () => {
@@ -11,10 +10,19 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     // promesa para las cartas
-    useEffect(() => {
-            customFetch (2000, dataFromBD.find(item => item.id === id))
-            .then(datos => setData(datos))
-            .catch(err => console.log(err))
+    useEffect(async () => {
+        const docRef = doc(db, "productos", id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            return {
+                id: idItem,
+                ...docSnap.data()
+            }
+        } else {
+            console.log("No such document!");
+        }
+        setData(docRef)
     }, [id]);
 
     return(

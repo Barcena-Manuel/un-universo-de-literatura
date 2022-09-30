@@ -13,9 +13,9 @@ const ItemDetail = ({productos}) => {
     const {addItem} = useContext(CartContext)
 
     const onAdd = (rate) => {
-        alert("Añadiste " + rate + " al carrito")
+        alert("Añadiste " + rate + " al carrito",);
         setItemCount(rate);
-        addItem(productos);
+        addItem(productos, rate);
     }
 
     return (
@@ -28,7 +28,7 @@ const ItemDetail = ({productos}) => {
                             <h5>Genero: {genero}</h5>
                             <h6>Sinopsis:</h6>
                             <p>{sinopsis}</p>
-                            <h5>Precio: {precio}</h5>
+                            <h5>Precio: ${precio}</h5>
                             <h6>Stock del producto: {stock}</h6>
                             {
                                 count === 0

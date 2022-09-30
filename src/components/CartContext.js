@@ -17,11 +17,15 @@ const CartContextProvider = ({children}) => {
                 imgItem: item.img,
                 tituloItem: item.titulo,
                 precioItem: item.precio,
-                cantidadItem: cantidad
+                cantidadItem: cantidad,
+                cantidad
             }
         ]);
         }else {
             found.cantidadItem += cantidad;
+            const cartFiltrado = cartList.filter(item => item.id !== found.id);
+            cartFiltrado.push(found);
+            setCartList(cartFiltrado);
         }
     }
 
@@ -36,7 +40,7 @@ const CartContextProvider = ({children}) => {
 
     const calcTotalPorItem = (idItem) => {
         let index = cartList.map(item => item.idItem).indexOf(idItem);
-        return cartList[index].costItem * cartList[index].cantidadItem;
+        return cartList[index].precioItem * cartList[index].cantidadItem;
     }
 
     const calcSubTotal = () => {
@@ -46,9 +50,7 @@ const CartContextProvider = ({children}) => {
 
     const calcImpuestos = () => calcSubTotal() * 0.21;
 
-    const calcTotal = () => {
-        return calcSubTotal();
-    }
+    const calcTotal = () => calcSubTotal() + calcImpuestos();
 
     const calcItemquantity = () => {
         let cantidades = cartList.map(item => item.cantidadItem);

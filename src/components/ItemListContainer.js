@@ -1,25 +1,28 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, orderBy, where, collection } from "firebase/firestore";
 import '../App.css'
-import customFetch from '../utils/CustomFetch'
 import ItemList from './ItemList'
-import dataFromBD from '../utils/Data'
+import { db } from '../utils/firebaseConfig'
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState ([])
     const { id } = useParams();
 
     // promesa para las cartas
-    useEffect(() => {
-        if(id) {
-            customFetch (2000, dataFromBD.filter(item => item.categoryId === id))
-                .then(datos => setProductos(datos))
-                .catch(err => console.log(err))
-        }else{ 
-            customFetch (2000, dataFromBD)
-                .then(datos => setProductos(datos))
-                .catch(err => console.log(err))
+    useEffect(async () => {
+        let q;
+        if (id) {
+            q = query(collection(db, "productos"), where("categoryOd", "==", id))
+        }else {
+            q = query(collection(db, "productos"), orderBy("titulo"))
         }
+        const querySnapshot = await getDocs(collection(db, "productos"));
+        const dataFromFirestore = querySnapshot.docs.map(item => ({
+            id: item.id,
+            ...item.data()
+        }))
+        setProductos(dataFromFirestore)
     }, [id]);
 
     return(
