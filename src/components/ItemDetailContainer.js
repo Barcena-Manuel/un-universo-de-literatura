@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
         }
     }
     // promesa para las cartas
-    useEffect( () => {
+    useEffect(() => {
         firestoreFetch(id)
         .then(result => setData(result))
         .catch(err => console.log(err))
