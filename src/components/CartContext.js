@@ -43,8 +43,12 @@ const CartContextProvider = ({children}) => {
     }
 
     const calcSubTotal = () => {
-        let totalPorItem = cartList.map(item => calcTotalPorItem(item.idItem));
+        if(cartList.length > 0){
+            let totalPorItem = cartList.map(item => calcTotalPorItem(item.idItem));
         return totalPorItem.reduce((previoValor, proximoValor) => previoValor + proximoValor);
+        }else{
+            return 0
+        }
     }
 
     const calcImpuestos = () => calcSubTotal() * 0.21;

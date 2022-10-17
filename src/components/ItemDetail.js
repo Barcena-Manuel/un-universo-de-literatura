@@ -20,7 +20,9 @@ const ItemDetail = ({productos}) => {
 
     return (
         <section>
-                    <div className="info letras">
+            {
+                productos ?
+                <div className="info letras">
                         <img src={img} alt="..." className="img"></img>
                         <div className="sinopsis letras__header">
                             <h2 className="titulo">{titulo}</h2>
@@ -36,7 +38,13 @@ const ItemDetail = ({productos}) => {
                                 : <Link to="/cart"><button variant="carrito" type="button" class="btn btn-warning">Ir al carrito</button></Link>
                             }
                         </div>
+                </div>
+                    :<div class="text-center">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </div>
+            }
         </section>
     )
 }

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
-import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore";
+import { serverTimestamp, doc, setDoc, collection } from "firebase/firestore";
 import { db } from "../utils/firebaseConfig"
 
 
@@ -29,13 +29,7 @@ const Cart = () => {
         const newOrderRef = doc(collection(db, "order"))
         await setDoc(newOrderRef, order);
         alert("Tu orden tiene de numero de ID " + newOrderRef.id)
-        cart.removeItem()
-        itemForDB.map(async (item) => {
-            const itemRef = doc(db, "productos", item.id);
-            await updateDoc(itemRef, {
-                stock: increment(-item.quantity)
-            });
-        })
+        cart.clear()
     }
 
     return (
@@ -60,17 +54,25 @@ const Cart = () => {
                 )
             }
         </ul>
-                    <div class="card carta__cuerpo">
-                        <div class="card-body">
-                        <h2 class="card-title">Productos en el Carro</h2>
-                        <div className="carta__letras">
-                            <p class="card-text carta__titulos">Subtotal: ${cart.calcSubTotal()}</p>
-                            <p class="card-text carta__titulos">Impuestos: ${cart.calcImpuestos()}</p>
-                            <h4 class="card-text carta__titulos">Total: ${cart.calcTotal()}</h4>
-                            <button type="button" class="btn btn-success" onClick={createOrder}>Comprar Producto/s</button>
-                        </div>
-                        </div>
+        {
+            cart.calcItemquantity() > 0
+            ? <div class="card carta__cuerpo">
+                <div class="card-body">
+                    <h2 class="card-title">Productos en el Carro</h2>
+                    <div className="carta__letras">
+                        <p class="card-text carta__titulos">Subtotal: ${cart.calcSubTotal()}</p>
+                        <p class="card-text carta__titulos">Impuestos: ${cart.calcImpuestos()}</p>
+                        <h4 class="card-text carta__titulos">Total: ${cart.calcTotal()}</h4>
+                        <button type="button" class="btn btn-success" onClick={createOrder}>Comprar Producto/s</button>
                     </div>
+                </div>
+            </div>
+            : <div class="card carta__cuerpo">
+            <div class="card-body">
+                <h2 class="lista__titulo">No hay productos en el Carrito</h2>
+            </div>
+        </div>
+        }
         </>
     )
 }
